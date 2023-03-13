@@ -17,7 +17,7 @@ function App() {
   };
   return (
     <>
-      <Navbar title="𝓒𝓪𝓼𝓮𝓜" mode={mode} toggleMode={toggleMode} />
+      <Navbar title="Text-M" mode={mode} toggleMode={toggleMode} />
       <div className="container my-3">
         <Content heading="Enter Text" mode={mode} />
       </div>

@@ -22,6 +22,9 @@ function Content(props) {
     let newText = "";
     setText(newText);
   };
+  // const handlePaste = () => {
+
+  // };
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
@@ -38,7 +41,12 @@ function Content(props) {
         >
           <strong>
             <p>
-              {text.split(" ").length} words and {text.length} characters
+              {
+                text.split(" ").filter((Element) => {
+                  return Element.length !== 0;
+                }).length
+              }{" "}
+              words and {text.length} characters
             </p>
           </strong>
         </div>
@@ -72,25 +80,17 @@ function Content(props) {
           className={`btn btn-${
             props.mode === "dark" ? "dark" : "primary"
           } mx-2 my-2  `}
-          onClick={handleLoClick}
-        >
-          Convert To Lowercase
-        </button>
-        <button
-          className={`btn btn-${
-            props.mode === "dark" ? "dark" : "primary"
-          } mx-2 my-2  `}
-          onClick={handleRomoveExtraSpaces}
-        >
-          Remove Extra Spaces
-        </button>
-        <button
-          className={`btn btn-${
-            props.mode === "dark" ? "dark" : "primary"
-          } mx-2 my-2  `}
           onClick={handleCopy}
         >
           Copy Text
+        </button>
+        <button
+          className={`btn btn-${
+            props.mode === "dark" ? "dark" : "primary"
+          } mx-2 my-2  `}
+          onClick={handleLoClick}
+        >
+          Convert To Lowercase
         </button>
         <button
           className={`btn btn-${
@@ -100,6 +100,22 @@ function Content(props) {
         >
           Clear Text
         </button>
+        <button
+          className={`btn btn-${
+            props.mode === "dark" ? "dark" : "primary"
+          } mx-2 my-2  `}
+          onClick={handleRomoveExtraSpaces}
+        >
+          Remove Extra Spaces
+        </button>
+        {/* <button
+          className={`btn btn-${
+            props.mode === "dark" ? "dark" : "primary"
+          } mx-2 my-2  `}
+          onClick={handlePaste}
+        >
+          Paste Text
+        </button> */}
       </div>
     </>
   );

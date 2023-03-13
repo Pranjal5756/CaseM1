@@ -5,7 +5,7 @@ function Navbar(props) {
     <div>
       <div>
         <h1
-          className={`bg-${props.mode} text-center p-2 text-${
+          className={`bg-${props.mode} text-center p-4 text-${
             props.mode === "light" ? "dark" : "light"
           }`}
         >
